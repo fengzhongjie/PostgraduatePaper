@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.jws.soap.SOAPBinding;
 import javax.servlet.http.HttpSession;
@@ -28,22 +29,25 @@ public class LoginController {
     }
     //表单提交过来的路径
     @RequestMapping("/checkLogin")
-    public String checkLogin(User user, Model model){
-        //调用service方法
+    public ModelAndView checkLogin(User user){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("login");
         user = userService.checkLogin(user.getUserId(), user.getPassword());
-        //若有user则添加到model里并且跳转到成功页面
         if(user != null){
-            model.addAttribute("user",user);
+            modelAndView.addObject("userid",user);
             switch (user.getRole()) {
                 case 0:
-                    return "AdminTeacher/homePage";
+                    modelAndView.setViewName("AdminTeacher/homepage");
+                    break;
                 case 1:
-                    return "Teacher/homePage";
+                    modelAndView.setViewName("Teacher/homepage");
+                    break;
                 case 2:
-                    return "Student/homePage";
+                    modelAndView.setViewName("Student/homepage");
+                    break;
             }
         }
-        return "login";
+        return modelAndView;
     }
 
 }
