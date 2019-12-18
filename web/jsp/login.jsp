@@ -20,6 +20,11 @@
 </head>
 <body>
 
+<ul class="layui-nav">
+    <li class="layui-nav-item">欢迎登录研究生论文选读系统</li>
+
+</ul>
+
 <div class="layadmin-user-login layadmin-user-display-show" id="LAY-user-login" style="display: none;">
 
     <div class="layadmin-user-login-main">
@@ -46,9 +51,9 @@
             <div class="layui-trans layui-form-item layadmin-user-login-other">
                  <a href="reg.html" class="layadmin-user-jump-change layadmin-link">注册帐号</a>
              </div>
-         </div>
-     </div>
 
+        </div>
+     </div>
 </div>
 </body>
 </html>
