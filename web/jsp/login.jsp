@@ -28,6 +28,7 @@
             <p>研究生论文选读系统</p>
         </div>
         <div class="layadmin-user-login-box layadmin-user-login-body layui-form">
+            <form action="${pageContext.request.contextPath}/user/checkLogin" method="post">
             <div class="layui-form-item">
                 <label class="layadmin-user-login-icon layui-icon layui-icon-username" for="LAY-user-login-username"></label>
                 <input type="text" name="username" id="LAY-user-login-username" lay-verify="required" placeholder="学号或教师号" class="layui-input">
@@ -49,52 +50,5 @@
      </div>
 
 </div>
-
-<script src="../resources/layuiadmin/layui/layui.js"></script>
-<script>
-    layui.config({
-        base: '../../layuiadmin/' //静态资源所在路径
-    }).extend({
-        index: 'lib/index' //主入口模块
-    }).use(['index', 'user'], function(){
-        var $ = layui.$
-            ,setter = layui.setter
-            ,admin = layui.admin
-            ,form = layui.form
-            ,router = layui.router()
-            ,search = router.search;
-
-        form.render();
-
-        //提交
-        form.on('submit(LAY-user-login-submit)', function(obj){
-
-            //请求登入接口
-            admin.req({
-                url: layui.setter.base + 'json/user/login.js' //实际使用请改成服务端真实接口
-                ,data: obj.field
-                ,done: function(res){
-
-                    //请求成功后，写入 access_token
-                    layui.data(setter.tableName, {
-                        key: setter.request.tokenName
-                        ,value: res.data.access_token
-                    });
-
-                    //登入成功的提示与跳转
-                    layer.msg('登入成功', {
-                        offset: '15px'
-                        ,icon: 1
-                        ,time: 1000
-                    }, function(){
-                        location.href = '../'; //后台主页
-                    });
-                }
-            });
-
-        });
-
-    });
-</script>
 </body>
 </html>
