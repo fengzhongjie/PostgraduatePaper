@@ -31,19 +31,19 @@ public class LoginController {
     @RequestMapping("/checkLogin")
     public ModelAndView checkLogin(User user){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("login");
+        modelAndView.setViewName("/login");
         user = userService.checkLogin(user.getUserId(), user.getPassword());
         if(user != null){
             modelAndView.addObject("userid",user);
             switch (user.getRole()) {
                 case 0:
-                    modelAndView.setViewName("AdminTeacher/homepage");
+                    modelAndView.setViewName("/AdminTeacher/homepage");
                     break;
                 case 1:
-                    modelAndView.setViewName("Teacher/homepage");
+                    modelAndView.setViewName("/Teacher/homepage");
                     break;
                 case 2:
-                    modelAndView.setViewName("Student/homepage");
+                    modelAndView.setViewName("/Student/homepage");
                     break;
             }
         }
