@@ -1,26 +1,22 @@
 <%--
   Created by IntelliJ IDEA.
   User: Fengzhongjie
-  Date: 2019/12/18
-  Time: 8:59
+  Date: 2019/12/19
+  Time: 11:03
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>主页 - 学生</title>
+    <title>主页 - 管理员</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <!--<link rel="stylesheet" href="../../resources/layuiadmin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../resources/layuiadmin/layui/css/layui.css" media="all">
     <link rel="stylesheet" href="../../resources/layuiadmin/style/admin.css" media="all">
-    -->
-    <link rel="stylesheet" href="../resources/layuiadmin/layui/css/layui.css" media="all">
-    <link rel="stylesheet" href="../resources/layuiadmin/style/admin.css" media="all">
 </head>
 
 <body class="layui-layout-body">
@@ -71,7 +67,7 @@
         <div class="layui-side layui-side-menu">
             <div class="layui-side-scroll">
                 <div class="layui-logo" href="home/console.html">
-                    <span>学生</span>
+                    <span>系统管理员</span>
                 </div>
 
                 <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu" lay-filter="layadmin-system-side-menu">
@@ -84,56 +80,53 @@
                             <dd data-name="console" class="layui-this">
                                 <a href=#>个人信息</a>
                             </dd>
-                            <dd data-name="console" class="layui-this">
-                                <a href=#>我的课程</a>
-                            </dd>
                         </dl>
                     </li>
 
                     <li data-name="app" class="layui-nav-item">
-                        <a href="javascript:;" lay-tips="学生管理" lay-direction="2">
+                        <a href="javascript:;" lay-tips="教师管理" lay-direction="2">
                             <i class="layui-icon layui-icon-app"></i>
-                            <cite>学生管理</cite>
+                            <cite>教师管理</cite>
                         </a>
                         <dl class="layui-nav-child">
 
                             <dd>
-                                <a href=#>查看学生选题</a>
+                                <a href=#>教师详情</a>
                             </dd>
                             <dd>
-                                <a href=#>查看选课学生</a>
+                                <a href=#>新增教师</a>
                             </dd>
                         </dl>
                     </li>
                     <li data-name="senior" class="layui-nav-item">
-                        <a href="javascript:;" lay-tips="选题管理" lay-direction="2">
+                        <a href="javascript:;" lay-tips="课程管理" lay-direction="2">
                             <i class="layui-icon layui-icon-senior"></i>
-                            <cite>选题管理</cite>
+                            <cite>课程管理</cite>
                         </a>
                         <dl class="layui-nav-child">
                             <dd>
-                                <a href=#>主题详情</a>
+                                <a href=#>课程详情</a>
                             </dd>
                             <dd>
-                                <a href=#>新增主题</a>
+                                <a href=#>新增课程</a>
                             </dd>
 
                         </dl>
                     </li>
                     <li data-name="user" class="layui-nav-item">
-                        <a href="javascript:;" lay-tips="教师管理" lay-direction="2">
+                        <a href="javascript:;" lay-tips="用户" lay-direction="2">
                             <i class="layui-icon layui-icon-user"></i>
-                            <cite>教师管理</cite>
+                            <cite>用户</cite>
                         </a>
                         <dl class="layui-nav-child">
                             <dd>
-                                <a href=#>网站用户</a>
+                                <a href="user/user/list.html">网站用户</a>
                             </dd>
                             <dd>
-                                <a href=#>后台管理员</a>
+                                <a href="user/administrators/list.html">后台管理员</a>
                             </dd>
                             <dd>
-                                <a href=#>角色管理</a>
+                                <a href="user/administrators/role.html">角色管理</a>
                             </dd>
                         </dl>
                     </li>
@@ -146,8 +139,8 @@
                             <dd class="layui-nav-itemed">
                                 <a href="javascript:;">系统设置</a>
                                 <dl class="layui-nav-child">
-                                    <dd><a href=#>网站设置</a></dd>
-                                    <dd><a href=#>邮件服务</a></dd>
+                                    <dd><a href="set/system/website.html">网站设置</a></dd>
+                                    <dd><a href="set/system/email.html">邮件服务</a></dd>
                                 </dl>
                             </dd>
                             <dd class="layui-nav-itemed">

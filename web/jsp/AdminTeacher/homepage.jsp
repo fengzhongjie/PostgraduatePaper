@@ -16,8 +16,8 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <link rel="stylesheet" href="../../resources/layuiadmin/layui/css/layui.css" media="all">
-    <link rel="stylesheet" href="../../resources/layuiadmin/style/admin.css" media="all">
+    <link rel="stylesheet" href="../resources/layuiadmin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../resources/layuiadmin/style/admin.css" media="all">
 </head>
 
 <body class="layui-layout-body">
@@ -64,6 +64,7 @@
             </ul>
         </div>
 
+
         <!-- 侧边菜单 -->
         <div class="layui-side layui-side-menu">
             <div class="layui-side-scroll">
@@ -92,7 +93,7 @@
                         <dl class="layui-nav-child">
 
                             <dd>
-                                <a href=#>教师详情</a>
+                                <a href="personinformation.jsp">教师详情</a>
                             </dd>
                             <dd>
                                 <a href=#>新增教师</a>
@@ -168,10 +169,10 @@
     </div>
 </div>
 
-<script src="../../resources/layuiadmin/layui/layui.js"></script>
+<script src="../resources/layuiadmin/layui/layui.js"></script>
 <script>
     layui.config({
-        base: '../../resources/layuiadmin/' //静态资源所在路径
+        base: '../resources/layuiadmin/' //静态资源所在路径
     }).extend({
         index: 'lib/index' //主入口模块
     }).use('index');

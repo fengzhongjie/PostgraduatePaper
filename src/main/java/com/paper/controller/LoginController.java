@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -29,25 +30,25 @@ public class LoginController {
     }
     //表单提交过来的路径
     @RequestMapping("/checkLogin")
-    public ModelAndView checkLogin(User user){
+
+    public ModelAndView checkLogin(String username,String password){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("/login");
-        user = userService.checkLogin(user.getUserId(), user.getPassword());
+        modelAndView.setViewName("login");
+        User user = userService.checkLogin(username, password);
         if(user != null){
             modelAndView.addObject("userid",user);
             switch (user.getRole()) {
                 case 0:
-                    modelAndView.setViewName("/AdminTeacher/homepage");
+                    modelAndView.setViewName("AdminTeacher/homepage");
                     break;
                 case 1:
-                    modelAndView.setViewName("/Teacher/homepage");
+                    modelAndView.setViewName("Teacher/homepage");
                     break;
                 case 2:
-                    modelAndView.setViewName("/Student/homepage");
+                    modelAndView.setViewName("Student/homepage");
                     break;
             }
         }
         return modelAndView;
     }
-
 }
