@@ -6,7 +6,7 @@ public class Tc implements Serializable {
     /**
     * TCID
     */
-    private String tcId;
+    private Integer tcId;
 
     /**
     * 课程ID
@@ -30,11 +30,11 @@ public class Tc implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public String getTcId() {
+    public Integer getTcId() {
         return tcId;
     }
 
-    public void setTcId(String tcId) {
+    public void setTcId(Integer tcId) {
         this.tcId = tcId;
     }
 

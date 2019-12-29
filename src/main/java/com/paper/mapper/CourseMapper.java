@@ -18,7 +18,7 @@ public interface CourseMapper {
 
     int insertSelective(Course record);
 
-    List<Course> selectByExample(CourseExample example);
+    List<Course> selectByExample(CourseExample example, @Param("listItem") String listItem);
 
     Course selectByPrimaryKey(String courseId);
 
@@ -33,4 +33,6 @@ public interface CourseMapper {
     int updateBatch(List<Course> list);
 
     int batchInsert(@Param("list") List<Course> list);
+
+    List<Course> selectByExample(CourseExample example);
 }

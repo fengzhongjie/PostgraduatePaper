@@ -1,6 +1,8 @@
 package com.paper.service;
 
 import java.util.List;
+
+import com.paper.model.Course;
 import com.paper.model.TcExample;
 import com.paper.model.Tc;
 public interface TcService{
@@ -18,7 +20,9 @@ public interface TcService{
 
     List<Tc> selectByExample(TcExample example);
 
-    Tc selectByPrimaryKey(String tcId);
+    Tc selectByPrimaryKey(Integer tcId);
+
+    List<String> selectByTeacherid(String teacherid);
 
     int updateByExampleSelective(Tc record,TcExample example);
 
@@ -31,5 +35,7 @@ public interface TcService{
     int updateBatch(List<Tc> list);
 
     int batchInsert(List<Tc> list);
+
+
 
 }

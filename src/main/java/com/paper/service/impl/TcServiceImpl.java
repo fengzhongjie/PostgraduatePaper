@@ -1,5 +1,6 @@
 package com.paper.service.impl;
 
+import com.paper.model.Course;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
@@ -44,8 +45,13 @@ public class TcServiceImpl implements TcService{
     }
 
     @Override
-    public Tc selectByPrimaryKey(String tcId) {
+    public Tc selectByPrimaryKey(Integer tcId) {
         return tcMapper.selectByPrimaryKey(tcId);
+    }
+
+    @Override
+    public List<String> selectByTeacherid(String teacherid) {
+        return tcMapper.selectByTeacherid(teacherid);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.paper.mapper;
 
+import com.paper.model.Course;
 import com.paper.model.Tc;
 import com.paper.model.TcExample;
 import java.util.List;
@@ -20,7 +21,10 @@ public interface TcMapper {
 
     List<Tc> selectByExample(TcExample example);
 
-    Tc selectByPrimaryKey(String tcId);
+    List<String> selectByTeacherid(String teacherid);
+
+    Tc selectByPrimaryKey(Integer tcId);
+
 
     int updateByExampleSelective(@Param("record") Tc record, @Param("example") TcExample example);
 
